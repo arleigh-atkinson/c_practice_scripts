@@ -12,15 +12,15 @@ int main(void)
 	int userChoice;
 	float userBalance = 0;
 
-	printf("How much is in your account?");
+	printf("How much is in your account? ");
 	scanf("%2f", &userAmt);
-	
 	userChoice = menu();
 	
+	printf("%d", userChoice);
 	if(userChoice == 1)
 	{
 		float userDeposit;
-		printf("How much would you like to deposit? ");
+		printf("How much would you like to deposit? \n");
 		scanf("%2f", &userDeposit);
 
 		userAmt = deposit(userAmt, userDeposit);
@@ -28,7 +28,7 @@ int main(void)
 		
 	}
 
-	else if(userChoice == 2 || userChoice == 3)
+	else if(userChoice == 2)
 	{
 		float userWithdrawal;
 		printf("How much would you like to withdraw? ");
@@ -40,14 +40,12 @@ int main(void)
 	return 0;
 }
 
-
 int menu(void)
 {
-	printf("Select one of the following: ");
-	printf("1. deposit \n");
-	printf("2. check \n");
-	printf("3. withdrawal \n");
-	int choice;
+	int choice = 0;
+	printf("Please select your action: \n");
+	printf("1. Deposit \n");
+	printf("2. Withdrawal \n");
 	scanf("%d", &choice);
 	return choice;
 }
