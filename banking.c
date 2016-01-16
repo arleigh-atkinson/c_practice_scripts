@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /* Prototypes */
-int menu(void);
+void menu(void);
 float withdrawal(float, float);
 float deposit(float, float);
 
@@ -14,9 +14,9 @@ int main(void)
 
 	printf("How much is in your account? ");
 	scanf("%2f", &userAmt);
-	userChoice = menu();
+	menu();
+	scanf("%d", &userChoice);	
 	
-	printf("%d", userChoice);
 	if(userChoice == 1)
 	{
 		float userDeposit;
@@ -40,14 +40,13 @@ int main(void)
 	return 0;
 }
 
-int menu(void)
+void menu(void)
 {
 	int choice = 0;
 	printf("Please select your action: \n");
 	printf("1. Deposit \n");
 	printf("2. Withdrawal \n");
 	scanf("%d", &choice);
-	return choice;
 }
 
 float deposit(float accountAmt, float depositAmt)

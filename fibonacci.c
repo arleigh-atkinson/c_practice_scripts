@@ -23,10 +23,11 @@ int main(void)
 	}
 
 	int i = 0;
-	for(i = 0; i < userChoice; i++)
+	for(i = 0; i < userChoice-1; i++)
 	{
 		printf("%d, ", fibArray[i]);
 	}
+	printf("%d", fibArray[userChoice-1]);
 	printf("\n");
 	
 	return 0;
